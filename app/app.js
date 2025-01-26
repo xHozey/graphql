@@ -1,30 +1,30 @@
 import { login } from "./templates/login.js";
+import { test } from "./templates/main.js";
 import { extractUserData } from "./services/authentication.js";
-import { checkAuthorization } from "./api/authorization.js";
+import { checkAuthorization } from "./utils/helpers.js";
+
+const styles = document.getElementById("styles")
 const appConatiner = document.getElementById("app");
 
-const route = (event) => {
-  event = event || window.event;
-  event.preventDefault();
-  window.history.pushState({}, "", event.target.href);
-  handleLocation();
-};
-
-export const handleLocation = async () => {
+export const handleLocation = () => {
   const path = window.location.pathname;
   switch (path) {
-    case "/graphql/":
-      await checkAuthorization();
-      appConatiner.innerHTML = `<h1>Hello World</h1>`;
+    case "/":
+      styles.innerHTML = `<link rel="stylesheet" href="./app/styles/main.css">`
+      checkAuthorization();
+      appConatiner.innerHTML = test;
       break;
-    case "/graphql/login":
+    case "/login":
+      styles.innerHTML = `<link rel="stylesheet" href="./app/styles/login.css">`
       appConatiner.innerHTML = login;
       extractUserData();
+      break;
+    default:
+      appConatiner.innerHTML = `<h1>404 Page Not Found</h1>`;
       break;
   }
 };
 
 window.onpopstate = handleLocation;
-window.route = route;
 
 handleLocation();
