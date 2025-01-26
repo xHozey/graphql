@@ -27,6 +27,6 @@ export const checkAuthorization = async () => {
     },
   });
   if (!res.ok) {
-    nav("/login");
+    nav("/graphql/login");
   }
 };
