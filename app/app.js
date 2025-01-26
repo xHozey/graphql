@@ -13,11 +13,11 @@ const route = (event) => {
 export const handleLocation = async () => {
   const path = window.location.pathname;
   switch (path) {
-    case "/":
+    case "/graphql/":
       await checkAuthorization();
       appConatiner.innerHTML = `<h1>Hello World</h1>`;
       break;
-    case "/login":
+    case "/graphql//login":
       appConatiner.innerHTML = login;
       extractUserData();
       break;
