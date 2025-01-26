@@ -17,7 +17,7 @@ export const handleLocation = async () => {
       await checkAuthorization();
       appConatiner.innerHTML = `<h1>Hello World</h1>`;
       break;
-    case "/graphql//login":
+    case "/graphql/login":
       appConatiner.innerHTML = login;
       extractUserData();
       break;
