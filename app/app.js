@@ -2,20 +2,22 @@ import { login } from "./templates/login.js";
 import { test } from "./templates/main.js";
 import { extractUserData } from "./services/authentication.js";
 import { checkAuthorization } from "./utils/helpers.js";
+import { userIdentification } from "./services/user_identification.js";
 
-const styles = document.getElementById("styles")
+const styles = document.getElementById("styles");
 const appConatiner = document.getElementById("app");
 
-export const handleLocation = () => {
+export const handleLocation = async () => {
   const path = window.location.pathname;
   switch (path) {
     case "/":
-      styles.innerHTML = `<link rel="stylesheet" href="./app/styles/main.css">`
+      styles.innerHTML = `<link rel="stylesheet" href="./app/styles/main.css">`;
       checkAuthorization();
       appConatiner.innerHTML = test;
+      await userIdentification()
       break;
     case "/login":
-      styles.innerHTML = `<link rel="stylesheet" href="./app/styles/login.css">`
+      styles.innerHTML = `<link rel="stylesheet" href="./app/styles/login.css">`;
       appConatiner.innerHTML = login;
       extractUserData();
       break;

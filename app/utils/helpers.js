@@ -1,7 +1,8 @@
 import { handleLocation } from "../app.js";
 
+
 export const showError = () => {
-  const error = document.getElementById("error-message");
+  const error = document.querySelector(".error");
   error.textContent = `Invalid email/username or password. Please try again.`;
   error.classList.remove("hidden");
   setTimeout(() => {

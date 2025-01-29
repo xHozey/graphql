@@ -8,10 +8,10 @@ export const requestToken = async (user) => {
         Authorization: `Basic ` + btoa(`${user.username}:${user.password}`),
       },
     });
-    const token = await res.json();
     if (!res.ok) {
       return;
     }
+    const token = await res.json();
     return token;
   } catch (err) {
     console.error(err);
