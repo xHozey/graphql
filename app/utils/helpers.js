@@ -21,3 +21,9 @@ export const checkAuthorization = async () => {
     window.location.href = "/login";
   }
 };
+
+export const formatType = (type) => {
+  type = type.replace("skill_", "")
+  type = type.split('-').join(' ')
+  return type.charAt(0).toUpperCase() + type.slice(1)
+}

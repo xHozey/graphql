@@ -15,12 +15,11 @@ const identificationLabels = (name, label) => {
 
 export const userIdentification = async () => {
   const userContainer = document.querySelector(".user-info");
-
   const data = await extractData(identificationQuery);
   const user = data.data.user[0];
-
   const login = identificationLabels(user.login, "Username");
   const firstname = identificationLabels(user.firstName, "First Name");
   const lastname = identificationLabels(user.lastName, "Last Name");
   userContainer.append(login, firstname, lastname);
 };
+

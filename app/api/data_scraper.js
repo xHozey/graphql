@@ -9,12 +9,15 @@ export const extractData = async (query) => {
       headers: {
         Authorization: `Bearer ${token}`,
       },
-      body: JSON.stringify({query}),
+      body: JSON.stringify({ query }),
     });
     if (!res.ok) {
       return;
     }
     const data = await res.json();
+    if (data.errors) {
+      window.location.href = "/login"
+    }
     return data;
   } catch (err) {
     console.error(err);
