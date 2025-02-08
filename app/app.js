@@ -5,6 +5,7 @@ import { checkAuthorization } from "./utils/helpers.js";
 import { userIdentification } from "./services/user_identification.js";
 import { userLevel } from "./services/user_level.js";
 import { userSkills } from "./services/user_skills.js";
+import { initGraphs } from "./services/graphs.js";
 const styles = document.getElementById("styles");
 const appConatiner = document.getElementById("app");
 
@@ -15,9 +16,11 @@ export const handleLocation = async () => {
       styles.innerHTML = `<link rel="stylesheet" href="./app/styles/main.css">`;
       checkAuthorization();
       appConatiner.innerHTML = test;
-      await userIdentification()
-      await userLevel()
-      await userSkills()
+      await userIdentification();
+      await userLevel();
+      await userSkills();
+      await initGraphs();
+
       break;
     case "/login":
       styles.innerHTML = `<link rel="stylesheet" href="./app/styles/login.css">`;

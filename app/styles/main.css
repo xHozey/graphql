@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
 }
 
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
   padding: 2rem;
 }
 
@@ -34,7 +34,7 @@ body {
 }
 
 .logout-btn {
-  background: linear-gradient(135deg, #4F46E5 0%, #4338CA 100%);
+  background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
   color: white;
   border: none;
   padding: 0.5rem 1rem;
@@ -78,7 +78,7 @@ body {
 }
 
 .level-title {
-  color: #4F46E5;
+  color: #4f46e5;
   font-size: 0.875rem;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -88,7 +88,7 @@ body {
 .level-value {
   font-size: 2.5rem;
   font-weight: bold;
-  color: #4338CA;
+  color: #4338ca;
   text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -125,18 +125,17 @@ body {
 
 .skill-bar {
   height: 100%;
-  background: linear-gradient(90deg, #4F46E5 0%, #4338CA 100%);
+  background: linear-gradient(90deg, #4f46e5 0%, #4338ca 100%);
   border-radius: 9999px;
   transition: width 1s ease-in-out;
 }
-
 
 .project-card {
   background: linear-gradient(to bottom right, rgba(79, 70, 229, 0.1), rgba(67, 56, 202, 0.1));
   padding: 1rem;
   border-radius: 8px;
   text-align: center;
-  color: #4338CA;
+  color: #4338ca;
   font-weight: 500;
   transition: transform 0.2s;
 }
@@ -145,12 +144,41 @@ body {
   transform: translateY(-2px);
 }
 
+.section-title {
+  color: #4f46e5;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+}
+
+#xp-chart-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+#xp-chart-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.xp-chart {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+}
+
+.tick-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
 @keyframes slideIn {
   from {
     transform: translateY(20px);
     opacity: 0;
   }
-
   to {
     transform: translateY(0);
     opacity: 1;
@@ -171,3 +199,16 @@ body {
     width: 100%;
   }
 }
+
+@media (max-width: 600px) {
+  .tick-text {
+    font-size: 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .tick-text {
+    font-size: 8px;
+  }
+}
+

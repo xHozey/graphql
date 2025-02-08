@@ -12,11 +12,13 @@ export const extractData = async (query) => {
       body: JSON.stringify({ query }),
     });
     if (!res.ok) {
+      window.location.href = "/login";
       return;
     }
     const data = await res.json();
     if (data.errors) {
-      window.location.href = "/login"
+      window.location.href = "/login";
+      return
     }
     return data;
   } catch (err) {

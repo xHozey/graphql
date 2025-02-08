@@ -15,12 +15,15 @@ export const test = `<div class="container">
       </div>
 
       <h2 class="section-title">Skills</h2>
-      
-
       <div class="skill">
       </div>
-
-      
+    </div>
+    <div class="container">
+        <div class="card" id="xp-chart-container">
+            <h2 class="section-title">XP Earned Over Time</h2>
+        </div>
+    </div>
+  </div>
     </div>
   </div>
 `;
