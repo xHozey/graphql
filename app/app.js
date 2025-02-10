@@ -11,8 +11,6 @@ import { nav } from "./utils/helpers.js";
 const styles = document.getElementById("styles");
 const appConatiner = document.getElementById("app");
 
-
-
 export const handleLocation = async () => {
   appConatiner.innerHTML = ""
   const path = window.location.pathname;

@@ -18,6 +18,6 @@ export const extractUserData = () => {
       return;
     }
     localStorage.setItem("Authorization", token);
-    nav("/");
+    nav("/graphql/");
   });
 };
