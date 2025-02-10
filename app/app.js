@@ -12,10 +12,10 @@ const styles = document.getElementById("styles");
 const appConatiner = document.getElementById("app");
 
 export const handleLocation = async () => {
-  const path = window.location.pathname.split("/graphql").join("");
+  const path = window.location.pathname;
 
   switch (path) {
-    case "/":
+    case "/" || "graphql/":
       styles.innerHTML = `<link rel="stylesheet" href="./app/styles/main.css">`;
       checkAuthorization();
       appConatiner.innerHTML = main;
@@ -29,7 +29,7 @@ export const handleLocation = async () => {
         window.location.href = "/login";
       });
       break;
-    case "/login":
+    case "/login" || "graphql/login":
       styles.innerHTML = `<link rel="stylesheet" href="./app/styles/login.css">`;
       appConatiner.innerHTML = login;
       extractUserData();
