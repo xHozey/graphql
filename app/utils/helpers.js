@@ -18,7 +18,7 @@ export const nav = (path) => {
 export const checkAuthorization = () => {
   const token = localStorage.getItem("Authorization");
   if (!token) {
-    window.location.href = "/login";
+    nav("/graphql/login")
   }
 };
 

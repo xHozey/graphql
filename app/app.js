@@ -7,15 +7,17 @@ import { userLevel } from "./services/user_level.js";
 import { userSkills } from "./services/user_skills.js";
 import { extractData } from "./api/data_scraper.js";
 import { initGraphs } from "./services/graphs.js";
-
+import { nav } from "./utils/helpers.js";
 const styles = document.getElementById("styles");
 const appConatiner = document.getElementById("app");
 
-export const handleLocation = async () => {
-  const path = window.location.pathname;
 
+
+export const handleLocation = async () => {
+  appConatiner = ""
+  const path = window.location.pathname;
   switch (path) {
-    case "/":
+    case "/graphql/":
       styles.innerHTML = `<link rel="stylesheet" href="./app/styles/main.css">`;
       checkAuthorization();
       appConatiner.innerHTML = main;
@@ -26,10 +28,10 @@ export const handleLocation = async () => {
       await initGraphs(data.data);
       document.querySelector(".logout-btn").addEventListener("click", () => {
         localStorage.removeItem("Authorization");
-        window.location.href = "/login";
+        nav("/graphql/login")
       });
       break;
-    case "/login":
+    case "/graphql/login":
       styles.innerHTML = `<link rel="stylesheet" href="./app/styles/login.css">`;
       appConatiner.innerHTML = login;
       extractUserData();
