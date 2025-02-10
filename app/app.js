@@ -8,6 +8,7 @@ import { userSkills } from "./services/user_skills.js";
 import { extractData } from "./api/data_scraper.js";
 import { initGraphs } from "./services/graphs.js";
 import { nav } from "./utils/helpers.js";
+
 const styles = document.getElementById("styles");
 const appConatiner = document.getElementById("app");
 

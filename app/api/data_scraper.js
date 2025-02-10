@@ -12,14 +12,10 @@ export const extractData = async () => {
     });
     const data = await res.json();
 
-    if (!res.ok) {
+    if (!res.ok || data.errors) {
       nav("/graphql/login");
-      return data;
     }
-    if (data.errors) {
-      nav("/graphql/login");
-      return data;
-    }
+
     return data;
   } catch (err) {
     console.error(err);
