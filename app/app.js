@@ -12,7 +12,8 @@ const styles = document.getElementById("styles");
 const appConatiner = document.getElementById("app");
 
 export const handleLocation = async () => {
-  const path = window.location.pathname;
+  const path = window.location.pathname.split("/graphql").join("");
+
   switch (path) {
     case "/":
       styles.innerHTML = `<link rel="stylesheet" href="./app/styles/main.css">`;
