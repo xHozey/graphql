@@ -1,4 +1,4 @@
-export const test = `<div class="container">
+export const main = `<div class="container">
     <div class="card">
       <div class="header">
         <h2 class="section-title">Profile</h2>
@@ -21,6 +21,9 @@ export const test = `<div class="container">
     <div class="container">
         <div class="card" id="xp-chart-container">
             <h2 class="section-title">XP Earned Over Time</h2>
+        </div>
+        <div class="card" id="xp-bar-container">
+            <h2 class="section-title">XP Earned By Project</h2>
         </div>
     </div>
   </div>

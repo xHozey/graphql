@@ -1,10 +1,8 @@
-import { extractData } from "../api/data_scraper.js"
-import { skills } from "../utils/queries.js"
-import { formatType } from "../utils/helpers.js"
+import { formatType } from "../utils/helpers.js";
 const initSkill = (type, amout) => {
-    const div = document.createElement('div')
-    div.classList.add('skill')
-    div.innerHTML = `
+  const div = document.createElement("div");
+  div.classList.add("skill");
+  div.innerHTML = `
     <div class="skill-header">
           <div class="skill-name">
             ${type}
@@ -14,18 +12,17 @@ const initSkill = (type, amout) => {
         <div class="skill-bar-container">
           <div class="skill-bar" style="width: ${amout}%"></div>
         </div>
-    `
-    return div
-}
+    `;
+  return div;
+};
 
-export const userSkills = async () => {
-    const skillsContainer = document.querySelector('.skill')
-    const data = await extractData(skills)
-    const filterDuplicate = {}
-    data.data.transaction.forEach(skill => {
-        if (!filterDuplicate[skill.type]) {
-            filterDuplicate[skill.type] = skill.amount
-            skillsContainer.append(initSkill(formatType(skill.type), skill.amount))
-        }        
-    });  
-}
+export const userSkills = async (skills) => {
+  const skillsContainer = document.querySelector(".skill");
+  const filterDuplicate = {};
+  skills.forEach((skill) => {
+    if (!filterDuplicate[skill.type]) {
+      filterDuplicate[skill.type] = skill.amount;
+      skillsContainer.append(initSkill(formatType(skill.type), skill.amount));
+    }
+  });
+};

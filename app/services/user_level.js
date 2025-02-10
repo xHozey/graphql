@@ -1,9 +1,4 @@
-import { extractData } from "../api/data_scraper.js"
-import { currentLevel } from "../utils/queries.js"
-
-export const userLevel = async () => {
+export const userLevel = async (currentLevel) => {
     const levelContainer = document.querySelector('.level-value')
-    const data = await extractData(currentLevel)
-    levelContainer.innerText = data.data.transaction_aggregate.aggregate.max.amount
-
+    levelContainer.innerText = currentLevel.amount
 }

@@ -15,7 +15,7 @@ export const nav = (path) => {
   handleLocation();
 };
 
-export const checkAuthorization = async () => {
+export const checkAuthorization = () => {
   const token = localStorage.getItem("Authorization");
   if (!token) {
     window.location.href = "/login";

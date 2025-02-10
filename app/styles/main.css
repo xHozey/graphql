@@ -153,7 +153,7 @@ body {
 #xp-chart-container {
   width: 100%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 5px auto;
   padding: 1rem;
 }
 
@@ -163,15 +163,34 @@ body {
   height: auto;
 }
 
+#xp-bar-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 5px auto;
+  padding: 1rem;
+}
+
+#xp-bar-container svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .xp-chart {
   width: 100%;
   height: auto;
-  max-height: 500px;
+  max-height: 600px; 
 }
 
 .tick-text {
   font-size: 12px;
   font-weight: 500;
+  fill: #4b5563;
+}
+
+.bar-text {
+  font-size: 10px;
+  font-weight: 600;
 }
 
 @keyframes slideIn {
@@ -201,13 +220,15 @@ body {
 }
 
 @media (max-width: 600px) {
-  .tick-text {
+  .tick-text,
+  .bar-text {
     font-size: 10px;
   }
 }
 
 @media (max-width: 400px) {
-  .tick-text {
+  .tick-text,
+  .bar-text {
     font-size: 8px;
   }
 }
