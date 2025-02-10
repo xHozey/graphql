@@ -1,5 +1,5 @@
 import { DOMAIN_NAME, DATA_API, QUERY } from "../config.js";
-
+import { nav } from "../utils/helpers.js";
 export const extractData = async () => {
   const token = localStorage.getItem("Authorization");
   try {
@@ -13,11 +13,11 @@ export const extractData = async () => {
     const data = await res.json();
 
     if (!res.ok) {
-      window.location.href = "/login";
+      nav("/graphql/login");
       return data;
     }
     if (data.errors) {
-      window.location.href = "/login";
+      nav("/graphql/login");
       return data;
     }
     return data;
