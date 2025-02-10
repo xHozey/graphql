@@ -14,7 +14,7 @@ const appConatiner = document.getElementById("app");
 
 
 export const handleLocation = async () => {
-  appConatiner = ""
+  appConatiner.innerHTML = ""
   const path = window.location.pathname;
   switch (path) {
     case "/graphql/":
