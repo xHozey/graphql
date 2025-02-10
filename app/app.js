@@ -15,7 +15,7 @@ export const handleLocation = async () => {
   const path = window.location.pathname;
 
   switch (path) {
-    case "/" || "graphql/":
+    case "/graphql/":
       styles.innerHTML = `<link rel="stylesheet" href="./app/styles/main.css">`;
       checkAuthorization();
       appConatiner.innerHTML = main;
@@ -26,10 +26,10 @@ export const handleLocation = async () => {
       await initGraphs(data.data);
       document.querySelector(".logout-btn").addEventListener("click", () => {
         localStorage.removeItem("Authorization");
-        window.location.href = "/login";
+        window.location.href = "/graphql/login";
       });
       break;
-    case "/login" || "graphql/login":
+    case "/graphql/login":
       styles.innerHTML = `<link rel="stylesheet" href="./app/styles/login.css">`;
       appConatiner.innerHTML = login;
       extractUserData();
