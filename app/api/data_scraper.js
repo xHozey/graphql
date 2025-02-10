@@ -13,12 +13,12 @@ export const extractData = async () => {
     const data = await res.json();
 
     if (!res.ok) {
-      window.location.href = "/login";
+      window.location.href = "/graphql/login";
       return data;
     }
     if (data.errors) {
-      window.location.href = "/login";
-      return data
+      window.location.href = "/graphql/login";
+      return data;
     }
     return data;
   } catch (err) {
